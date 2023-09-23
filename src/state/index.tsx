@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useEffect, useReducer } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
 import { reducer } from "./reducer";
 import { IState } from "./types";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -33,4 +39,9 @@ export const Provider = ({ children }: ProvideProps) => {
   return (
     <context.Provider value={{ state, dispatch }}>{children}</context.Provider>
   );
+};
+
+export const useAppContext = () => {
+  const { state } = useContext(context);
+  return state;
 };

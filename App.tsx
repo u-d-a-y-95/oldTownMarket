@@ -1,20 +1,34 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import ShopScreen from "./src/screens/shop";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import SplashScreen from "./src/screens/splash";
+import { Provider } from "./src/state";
+import OnBoarding from "./src/screens/onBoarding";
+
+const { Navigator, Screen } = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ShopScreen />
-    </View>
+    <Provider>
+      <NavigationContainer>
+        <Navigator initialRouteName="Splash">
+          <Screen
+            name="Splash"
+            component={SplashScreen}
+            options={{ headerShown: false }}
+          />
+          <Screen
+            name="OnBoarding"
+            component={OnBoarding}
+            options={{ headerShown: false }}
+          />
+          <Screen
+            name="Shop"
+            component={ShopScreen}
+            options={{ headerShown: false }}
+          />
+        </Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
