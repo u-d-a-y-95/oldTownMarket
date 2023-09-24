@@ -9,6 +9,7 @@ import {
 import { COLOR } from "../../utils/const";
 import { GlobalStyle } from "../../styles/global.style";
 import { NavigationProp } from "@react-navigation/native";
+import { FlatButton } from "../../components/buttons/flatButton";
 const imageSrc = require("../../../assets/images/onboardBgImg.png");
 
 type onBoardingProps = {
@@ -55,17 +56,10 @@ export default function OnBoarding({ navigation }: onBoardingProps) {
           </Text>
         </View>
         <View style={styles.footer}>
-          <Pressable style={styles.button} onPress={getStartedButtonPressed}>
-            <Text
-              style={[
-                GlobalStyle.font_bold,
-                GlobalStyle.font_md,
-                GlobalStyle.font_white,
-              ]}
-            >
-              Get Started
-            </Text>
-          </Pressable>
+          <FlatButton
+            label="Get Started"
+            onPressHandler={getStartedButtonPressed}
+          />
         </View>
       </ImageBackground>
     </View>

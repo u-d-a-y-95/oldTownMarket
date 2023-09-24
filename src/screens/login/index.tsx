@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { COLOR } from "../../utils/const";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
+import { FlatButton } from "../../components/buttons/flatButton";
 
 export default function LoginScreen() {
   return (
@@ -42,9 +43,7 @@ export default function LoginScreen() {
               />
             </View>
 
-            <Pressable style={styles.loginBtn}>
-              <Text style={styles.btnText}>Log in</Text>
-            </Pressable>
+            <FlatButton label="Log in" />
           </View>
         </View>
       </View>
