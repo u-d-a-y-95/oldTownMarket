@@ -1,9 +1,9 @@
 import { ScrollView, StyleSheet, View } from "react-native";
-import { SearchInput } from "../../components/searchInput";
-import withSafeZone from "../../hoc/withSafeZone";
-import ProductCard from "../../components/cards/productCard";
-import CardHolder from "../../components/cards/cardHolder";
-import { products } from "../../utils/dummy";
+import { SearchInput } from "../../../components/searchInput";
+import withSafeZone from "../../../hoc/withSafeZone";
+import ProductCard from "../../../components/cards/productCard";
+import CardHolder from "../../../components/cards/cardHolder";
+import { products } from "../../../utils/dummy";
 
 function ShopScreen() {
   return (

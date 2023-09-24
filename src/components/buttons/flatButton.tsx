@@ -14,7 +14,6 @@ export const FlatButton = ({
   disabled,
 }: FlatButtonProps) => {
   const handler = () => {
-    console.log("test");
     onPressHandler && onPressHandler();
   };
   return (

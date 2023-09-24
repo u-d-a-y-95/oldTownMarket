@@ -12,7 +12,7 @@ import { COLOR } from "../../utils/const";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { FlatButton } from "../../components/buttons/flatButton";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.root}>
       <View>
@@ -43,7 +43,15 @@ export default function LoginScreen() {
               />
             </View>
 
-            <FlatButton label="Log in" />
+            <FlatButton
+              label="Log in"
+              onPressHandler={() => {
+                navigation.reset({
+                  index: 0,
+                  routes: [{ name: "Main" }],
+                });
+              }}
+            />
           </View>
         </View>
       </View>

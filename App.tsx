@@ -1,10 +1,10 @@
-import ShopScreen from "./src/screens/shop";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SplashScreen from "./src/screens/splash";
 import { Provider } from "./src/state";
 import OnBoarding from "./src/screens/onBoarding";
 import LoginScreen from "./src/screens/login";
+import Main from "./src/screens/main";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -29,8 +29,8 @@ export default function App() {
             options={{ headerShown: false }}
           />
           <Screen
-            name="Shop"
-            component={ShopScreen}
+            name="Main"
+            component={Main}
             options={{ headerShown: false }}
           />
         </Navigator>
