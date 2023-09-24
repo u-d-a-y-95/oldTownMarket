@@ -17,7 +17,7 @@ type onBoardingProps = {
 
 export default function OnBoarding({ navigation }: onBoardingProps) {
   const getStartedButtonPressed = () => {
-    navigation.navigate("login");
+    navigation.navigate("Login");
   };
 
   return (
