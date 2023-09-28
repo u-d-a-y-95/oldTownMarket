@@ -3,7 +3,10 @@ import withSafeZone from "../../../hoc/withSafeZone";
 
 import { products } from "../../../utils/dummy";
 
-import { widthPercentageToDP as wp } from "react-native-responsive-screen";
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from "react-native-responsive-screen";
 import ProductCard from "../../../components/cards/productCard";
 
 const CategoryWiseProduct = () => {
@@ -13,7 +16,11 @@ const CategoryWiseProduct = () => {
         numColumns={2}
         data={products}
         columnWrapperStyle={{ justifyContent: "space-between" }}
-        renderItem={({ item }) => <ProductCard {...item} />}
+        renderItem={({ item }) => (
+          <View style={{ width: wp(44), height: 250 }}>
+            <ProductCard {...item} />
+          </View>
+        )}
         ItemSeparatorComponent={() => (
           <View style={{ paddingBottom: "3.8%" }}></View>
         )}

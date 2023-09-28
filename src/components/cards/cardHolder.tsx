@@ -1,5 +1,8 @@
 import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
-import { heightPercentageToDP as hp } from "react-native-responsive-screen";
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from "react-native-responsive-screen";
 import { COLOR } from "../../utils/const";
 
 type CardHolderProps = {
@@ -23,13 +26,13 @@ export default function CardHolder({
       </View>
       <FlatList
         showsHorizontalScrollIndicator={false}
-        ItemSeparatorComponent={() => <View style={{ width: 20 }}></View>}
+        ItemSeparatorComponent={() => <View style={{ width: wp(4) }}></View>}
         horizontal
         data={data}
         renderItem={({ item }) => (
-          <>
+          <View style={{ width: wp(40), height: hp(25) }}>
             <ItemRender {...item} />
-          </>
+          </View>
         )}
       />
     </View>
