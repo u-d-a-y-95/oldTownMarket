@@ -48,7 +48,7 @@ export default function LoginScreen({ navigation }) {
               onPressHandler={() => {
                 navigation.reset({
                   index: 0,
-                  routes: [{ name: "Main" }],
+                  routes: [{ name: "MainNavigator" }],
                 });
               }}
             />

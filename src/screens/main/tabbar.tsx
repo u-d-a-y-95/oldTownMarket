@@ -8,6 +8,10 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import {
+  getFocusedRouteNameFromRoute,
+  useRoute,
+} from "@react-navigation/native";
 
 const icons = {
   Shop: {
@@ -32,6 +36,10 @@ const icons = {
   },
 };
 
+const canTabBarShow = (routeName) => {
+  return ["Main"].includes(routeName) ? true : false;
+};
+
 export default function TabBar({ state, descriptors, navigation, insets }) {
   const { routes, index } = state;
 
@@ -49,7 +57,6 @@ export default function TabBar({ state, descriptors, navigation, insets }) {
             });
 
             if (!isFocused && !event.defaultPrevented) {
-              // The `merge: true` option makes sure that the params inside the tab screen are preserved
               navigation.navigate({ name: route.name, merge: true });
             }
           };
@@ -61,7 +68,7 @@ export default function TabBar({ state, descriptors, navigation, insets }) {
                 color={isFocused ? COLOR.PRIMARY : "black"}
               />
               <Text style={{ color: isFocused ? COLOR.PRIMARY : "black" }}>
-                {route.name}
+                {descriptors[route.key].options.title}
               </Text>
             </Pressable>
           );

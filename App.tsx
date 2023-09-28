@@ -4,7 +4,7 @@ import SplashScreen from "./src/screens/splash";
 import { Provider } from "./src/state";
 import OnBoarding from "./src/screens/onBoarding";
 import LoginScreen from "./src/screens/login";
-import Main from "./src/screens/main";
+import { Main } from "./src/navigations/index";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -29,7 +29,7 @@ export default function App() {
             options={{ headerShown: false }}
           />
           <Screen
-            name="Main"
+            name="MainNavigator"
             component={Main}
             options={{ headerShown: false }}
           />
